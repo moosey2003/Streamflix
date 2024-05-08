@@ -4,8 +4,29 @@
 import { Card } from "flowbite-react";
 import image from '../assets/onepiece.avif'
 import { movies } from "../components/data";
+import { useEffect, useState } from "react";
 
 const Movie = () => {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://127.0.0.1:5002/api/getMovies");
+        if (response.ok) {
+          const data = await response.json();
+          setMovies(data);
+          console.log('success');
+        } else {
+          console.log('fail');
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
     
   return (
 <>
@@ -19,75 +40,17 @@ const Movie = () => {
              imgSrc={image}
            >
              <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-               {data.name}
+               {data.title}
              </h5>
              <p className="font-normal text-gray-700 dark:text-gray-400">
-                {data.description}
+                {/* {data.description} */}
              </p>
            </Card>
         
         ) )}
     </div>  
 
-    <div className="flex ">
-        {/* <h1>Movies</h1> */}
-        {movies.map((data, index) => (
-             <Card
-             key={index}
-             className="max-w-sm flex justify-between"
-             imgAlt="Meaningful alt text for an image that is not purely decorative"
-             imgSrc={image}
-           >
-             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-               {data.name}
-             </h5>
-             <p className="font-normal text-gray-700 dark:text-gray-400">
-                {data.description}
-             </p>
-           </Card>
-        
-        ) )}
-    </div>  
-
-    <div className="flex ">
-        {/* <h1>Movies</h1> */}
-        {movies.map((data, index) => (
-             <Card
-             key={index}
-             className="max-w-sm flex justify-between"
-             imgAlt="Meaningful alt text for an image that is not purely decorative"
-             imgSrc={image}
-           >
-             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-               {data.name}
-             </h5>
-             <p className="font-normal text-gray-700 dark:text-gray-400">
-                {data.description}
-             </p>
-           </Card>
-        
-        ) )}
-    </div>  
-
-    <div className="flex ">
-        {/* <h1>Movies</h1> */}
-        {movies.map((data, index) => (
-             <Card
-             key={index}
-             className="max-w-sm flex justify-between"
-             imgAlt="Meaningful alt text for an image that is not purely decorative"
-             imgSrc={image}
-           >
-             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-               {data.name}
-             </h5>
-             <p className="font-normal text-gray-700 dark:text-gray-400">
-                {data.description}
-             </p>
-           </Card>
-        
-        ) )}
-    </div>  
+    
      </>   
    
   );

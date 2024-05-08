@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div>
         <Navigation />
-    <div>
+    <div className='bg-black'>
         <Poster/>
       <Trending/>
     <Movies/>

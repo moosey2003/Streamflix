@@ -10,7 +10,8 @@ import  Dashboard  from './pages/Admin_dashboard';
 import  Table from './pages/Table';
 import User  from './pages/User_table';
 import Movie from "./pages/Movie";
-
+import Contact from './pages/Contact';
+import Subscription from './pages/Subscription';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -23,6 +24,8 @@ ReactDOM.render(
         <Route path="admin" element={<Table />} />
         <Route path="user" element={<User />} />
         <Route path="movie" element={<Movie />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="subscription" element={<Subscription />} />
       </Routes>
       
     </BrowserRouter>

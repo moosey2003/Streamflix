@@ -21,17 +21,23 @@ const Navigation = () => {
               <a href="#" className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300">
                 Home
               </a>
-              <a href="#" className="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300">
-                About
+              <a href="/movie" className="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                Movies
               </a>
               <a href="#" className="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300">
-                Services
+                TV Shows
               </a>
               <a href="#" className="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300">
-                Pricing
+                Favorite lists
               </a>
               <a href="#" className="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300">
-                Contact
+                Subscription
+              </a>
+              <a href="#" className="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                About us
+              </a>
+              <a href="/contact" className="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                Contact us
               </a>
             </div>
           </div>
@@ -58,10 +64,13 @@ const Navigation = () => {
       <div className={`${isOpen ? 'block' : 'hidden'} sm:hidden`}>
         <div className="pt-2 pb-3 space-y-1">
           <a href="#" className="block px-3 py-2 border-b-2 border-transparent text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Home</a>
-          <a href="#" className="block px-3 py-2 border-b-2 border-transparent text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">About</a>
-          <a href="#" className="block px-3 py-2 border-b-2 border-transparent text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Services</a>
-          <a href="#" className="block px-3 py-2 border-b-2 border-transparent text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Pricing</a>
-          <a href="#" className="block px-3 py-2 border-b-2 border-transparent text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Contact</a>
+          <a href="#" className="block px-3 py-2 border-b-2 border-transparent text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Movies</a>
+          <a href="#" className="block px-3 py-2 border-b-2 border-transparent text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">TV shows</a>
+          <a href="#" className="block px-3 py-2 border-b-2 border-transparent text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Favorite lists</a>
+          <a href="#" className="block px-3 py-2 border-b-2 border-transparent text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Subscription</a>
+          <a href="#" className="block px-3 py-2 border-b-2 border-transparent text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">About us</a>
+          <a href="#" className="block px-3 py-2 border-b-2 border-transparent text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">Contact us</a>
+        
         </div>
       </div>
     </nav>

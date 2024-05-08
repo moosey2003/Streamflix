@@ -12,6 +12,7 @@ export function Admin() {
           <Table.HeadCell>Color</Table.HeadCell>
           <Table.HeadCell>Category</Table.HeadCell>
           <Table.HeadCell>Price</Table.HeadCell>
+          <Table.HeadCell>Prices</Table.HeadCell>
           <Table.HeadCell>
             <span className="sr-only">Edit</span>
           </Table.HeadCell>
@@ -23,6 +24,7 @@ export function Admin() {
             </Table.Cell>
             <Table.Cell>Sliver</Table.Cell>
             <Table.Cell>Laptop</Table.Cell>
+            <Table.Cell>$2999</Table.Cell>
             <Table.Cell>$2999</Table.Cell>
             <Table.Cell>
               <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
@@ -37,6 +39,7 @@ export function Admin() {
             <Table.Cell>White</Table.Cell>
             <Table.Cell>Laptop PC</Table.Cell>
             <Table.Cell>$1999</Table.Cell>
+            <Table.Cell>$1999</Table.Cell>
             <Table.Cell>
               <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
                 Edit
@@ -47,6 +50,7 @@ export function Admin() {
             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">Magic Mouse 2</Table.Cell>
             <Table.Cell>Black</Table.Cell>
             <Table.Cell>Accessories</Table.Cell>
+            <Table.Cell>$99</Table.Cell>
             <Table.Cell>$99</Table.Cell>
             <Table.Cell>
               <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
