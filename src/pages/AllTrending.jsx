@@ -1,18 +1,14 @@
-
-"use client";
-
 import { Card } from "flowbite-react";
-import image from '../assets/onepiece.avif'
-import { movies } from "./data";
 import { useEffect, useState } from "react";
+import image from "../assets/onepiece.avif"
 
-const Movies = () => {
+const AllTrending = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5002/api/getMovies");
+        const response = await fetch("http://127.0.0.1:5002/api/getTrending");
         if (response.ok) {
           const data = await response.json();
           setMovies(data);
@@ -27,14 +23,12 @@ const Movies = () => {
 
     fetchData();
   }, []);
-    
-  return (
 
+  return (
     <div className="w-screen mt-4">
-      
-      <h1 className="text-3xl text-white font-medium ml-4 mb-4">Moves</h1>
+      <h1 className="text-3xl text-white font-medium ml-4 mb-4">Trending Now</h1>
       <div className="flex ">
-      {movies.slice(0, 4).map((movie, index)   => (
+        {movies.map((movie, index) => (
           <Card
             key={index}
             className="max-w-sm flex justify-between mx-8 bg-gray-900"
@@ -66,7 +60,7 @@ const Movies = () => {
         ))}
       </div>
     </div>
-   
   );
-}
-export default Movies
+};
+
+export default AllTrending;

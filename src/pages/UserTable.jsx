@@ -3,16 +3,20 @@
 
 import { Table } from "flowbite-react";
 
-const movieTable = () => {
+const User = () => {
   return (
     <div className="overflow-x-auto">
-      <Table>
+      <Table striped>
         <Table.Head>
-          <Table.HeadCell>Product name</Table.HeadCell>
-          <Table.HeadCell>Color</Table.HeadCell>
-          <Table.HeadCell>Category</Table.HeadCell>
-          <Table.HeadCell>Price</Table.HeadCell>
-          <Table.HeadCell>Price</Table.HeadCell>
+          <Table.HeadCell>Username</Table.HeadCell>
+          <Table.HeadCell>Email</Table.HeadCell>
+          <Table.HeadCell>Status</Table.HeadCell>
+          <Table.HeadCell>Quantity</Table.HeadCell>
+          <Table.HeadCell>Purchased Date</Table.HeadCell>
+          <Table.HeadCell>Types of Plan</Table.HeadCell>
+          <Table.HeadCell>Registration Date</Table.HeadCell>   
+          <Table.HeadCell>Last Login Date</Table.HeadCell>   
+          <Table.HeadCell>Total Price</Table.HeadCell>
           <Table.HeadCell>
             <span className="sr-only">Edit</span>
           </Table.HeadCell>
@@ -55,10 +59,34 @@ const movieTable = () => {
               </a>
             </Table.Cell>
           </Table.Row>
+          <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+              Google Pixel Phone
+            </Table.Cell>
+            <Table.Cell>Gray</Table.Cell>
+            <Table.Cell>Phone</Table.Cell>
+            <Table.Cell>$799</Table.Cell>
+            <Table.Cell>
+              <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
+                Edit
+              </a>
+            </Table.Cell>
+          </Table.Row>
+          <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">Apple Watch 5</Table.Cell>
+            <Table.Cell>Red</Table.Cell>
+            <Table.Cell>Wearables</Table.Cell>
+            <Table.Cell>$999</Table.Cell>
+            <Table.Cell>
+              <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
+                Edit
+              </a>
+            </Table.Cell>
+          </Table.Row>
         </Table.Body>
       </Table>
     </div>
   );
 }
 
-export default movieTable
+export default User

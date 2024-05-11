@@ -1,6 +1,6 @@
 
 "use client";
-
+import React from "react";
 import { Card } from "flowbite-react";
 import image from '../assets/onepiece.avif'
 import { useEffect, useState } from "react";
@@ -8,7 +8,7 @@ import Navigation from "./navigation/Navigation";
 import Footers from "./Footer";
 // import { movies } from "./data";
 
-const TVshows = () => {
+const AllTv = () => {
 
   const [movies, setMovies] = useState([]);
 
@@ -32,13 +32,12 @@ const TVshows = () => {
   }, []);
     
   return (
-    <div className="w-screen mt-4">
-      <h1 className="text-3xl text-white font-medium ml-4 mb-4">TV Shows</h1>
-
+    <div className="w-screen  bg-black">
+    <Navigation />
       <div className="flex mt-4 mb-4">
-  
+          {/* <h1>Movies</h1> */}
           <div className="flex ">
-        {movies.slice(0, 4).map((movie, index)   => (
+          {movies.map((movie, index) => (
             <Card
               key={index}
               className="max-w-sm flex justify-between mx-8 bg-gray-900"
@@ -71,9 +70,9 @@ const TVshows = () => {
         </div>
       </div>  
   
-
+      <Footers/>
        </div>  
    
   );
 }
-export default TVshows
+export default AllTv

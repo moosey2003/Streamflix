@@ -1,10 +1,13 @@
 import React from 'react'
+import Navigation from '../components/navigation/Navigation'
+import Footers from '../components/Footer'
 
 const Subscription = () => {
   return (
-    <div className=' w-screen h-screen bg-black '>
+    <div className=' w-screen  bg-black '>
+        <Navigation />
          <h1 className='text-5xl font-bold text-white text-center py-16'>Choose Your Subscription Plans to Enjoy</h1>
-        <div className='flex justify-around items-center'>
+        <div className='flex justify-around items-center mb-8'>
         <div className="w-full  max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
 <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Standard plan</h5>
 <div className="flex items-baseline text-gray-900 dark:text-white">
@@ -169,7 +172,7 @@ const Subscription = () => {
         </div>
      
 
-
+<Footers />
     </div>
   )
 }

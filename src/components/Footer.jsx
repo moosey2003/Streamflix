@@ -48,11 +48,11 @@ const  Footers = () => {
         <div className="w-full bg-gray-700 px-4 py-6 sm:flex sm:items-center sm:justify-between">
           <Footer.Copyright href="#" by="Flowbite™" year={2022} />
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
-            <Footer.Icon href="#" icon={BsFacebook} />
-            <Footer.Icon href="#" icon={BsInstagram} />
-            <Footer.Icon href="#" icon={BsTwitter} />
-            <Footer.Icon href="#" icon={BsGithub} />
-            <Footer.Icon href="#" icon={BsDribbble} />
+            <Footer.Icon href="#" icon={BsFacebook} className="hover:text-white" />
+            <Footer.Icon href="#" icon={BsInstagram} className="hover:text-white" />
+            <Footer.Icon href="#" icon={BsTwitter} className="hover:text-white" />
+            <Footer.Icon href="#" icon={BsGithub} className="hover:text-white" />
+            <Footer.Icon href="#" icon={BsDribbble} className="hover:text-white" />
           </div>
         </div>
       </div>

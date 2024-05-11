@@ -27,20 +27,35 @@ const Trending = () => {
   return (
     <div className="w-screen mt-4">
       <h1 className="text-3xl text-white font-medium ml-4 mb-4">Trending Now</h1>
-      <div className="flex">
-        {movies.map((movie, index) => (
+      <div className="flex ">
+      {movies.slice(0, 4).map((movie, index)   => (
           <Card
             key={index}
-            className="max-w-sm flex justify-between mx-8"
+            className="max-w-sm flex justify-between mx-8 bg-gray-900"
             imgAlt="Meaningful alt text for an image that is not purely decorative"
             imgSrc={image}
           >
-            <h5 className="text-2xl font-bold tracking-tight text-gray-900">
+            <div className="flex items-center justify-between">
+            <h5 className="text-2xl font-bold tracking-tight text-white">
               {movie.title}
             </h5>
-            <p className="font-normal text-gray-700 dark:text-gray-400">
-              {/* {movie.description} */}
+            <span className="text-white bg-yellow-400 w-16 h-6 rounded-sm text-center ">
+              {movie.rating}
+            </span>
+            </div>
+           
+            <p className="font-normal w-64 h-24 text-white overflow-hidden text-ellipsis ">
+              {movie.description}...
             </p>
+            
+            <div className="flex justify-end">
+            
+
+            <button className="bg-blue-400 rounded-lg w-32 h-10">
+              Add to Favorite
+            </button>
+            </div>
+            
           </Card>
         ))}
       </div>

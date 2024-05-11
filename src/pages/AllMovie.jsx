@@ -3,10 +3,12 @@
 
 import { Card } from "flowbite-react";
 import image from '../assets/onepiece.avif'
-import { movies } from "./data";
+import { movies } from "../components/data";
 import { useEffect, useState } from "react";
+import Navigation from "../components/navigation/Navigation";
+import Footers from "../components/Footer";
 
-const Movies = () => {
+const Movie = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -29,12 +31,12 @@ const Movies = () => {
   }, []);
     
   return (
-
-    <div className="w-screen mt-4">
-      
-      <h1 className="text-3xl text-white font-medium ml-4 mb-4">Moves</h1>
-      <div className="flex ">
-      {movies.slice(0, 4).map((movie, index)   => (
+<div className="w-screen  bg-black">
+  <Navigation />
+    <div className="flex mt-4 mb-4">
+        {/* <h1>Movies</h1> */}
+        <div className="flex ">
+        {movies.map((movie, index) => (
           <Card
             key={index}
             className="max-w-sm flex justify-between mx-8 bg-gray-900"
@@ -65,8 +67,11 @@ const Movies = () => {
           </Card>
         ))}
       </div>
-    </div>
+    </div>  
+
+    <Footers/>
+     </div>   
    
   );
 }
-export default Movies
+export default Movie

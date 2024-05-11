@@ -38,23 +38,46 @@ def insert_json():
 @app.route('/api/getMovies', methods=['GET'])
 def get_movies():
     data = mongo.db.movies.find()
-    movies = [{'title': movie['title']} for movie in data]
-    return jsonify(movies)
-
-
+    movie = [{
+                'title': movie['title'],
+                'description': movie['description'],
+                'duration': movie['duration'],
+                'rating': movie['rating'],
+                'cast': movie['cast'],
+                'genre': movie['genre'],
+                'release_date': movie['release_date']
+            }  for movie in data]
+    return jsonify(movie)
     
 @app.route('/api/getTrending', methods=['GET'])
 def get_trendings():
     data = mongo.db.trending.find()
-    movies = [{'title': movie['title']} for movie in data]
-    return jsonify(movies)
+    movie = [{
+            'title': movie['title'],
+            'description': movie['description'],
+            'duration': movie['duration'],
+            'rating': movie['rating'],
+            'cast': movie['cast'],
+            'genre': movie['genre'],
+            'release_date': movie['release_date']
+        }  for movie in data]
+  
+    return jsonify(movie)
 
     
 @app.route('/api/getTvshows', methods=['GET'])
 def get_tvshows():
     data = mongo.db.tvshows.find()
-    movies = [{'title': movie['title']} for movie in data]
-    return jsonify(movies)
+    movie = [{
+            'title': movie['title'],
+            'description': movie['description'],
+            'duration': movie['duration'],
+            'rating': movie['rating'],
+            'cast': movie['cast'],
+            'genre': movie['genre'],
+            'release_date': movie['release_date']
+        }  for movie in data]
+    return jsonify(movie)
 
 
 

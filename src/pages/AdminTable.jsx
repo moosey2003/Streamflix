@@ -8,11 +8,11 @@ export function Admin() {
     <div className="overflow-x-auto">
       <Table hoverable>
         <Table.Head>
-          <Table.HeadCell>Product name</Table.HeadCell>
-          <Table.HeadCell>Color</Table.HeadCell>
-          <Table.HeadCell>Category</Table.HeadCell>
-          <Table.HeadCell>Price</Table.HeadCell>
-          <Table.HeadCell>Prices</Table.HeadCell>
+          <Table.HeadCell>Admin ID</Table.HeadCell>
+          <Table.HeadCell>Username</Table.HeadCell>
+          <Table.HeadCell>Email</Table.HeadCell>
+          <Table.HeadCell>Status</Table.HeadCell>
+          <Table.HeadCell>Last Login Date</Table.HeadCell>
           <Table.HeadCell>
             <span className="sr-only">Edit</span>
           </Table.HeadCell>
@@ -26,6 +26,7 @@ export function Admin() {
             <Table.Cell>Laptop</Table.Cell>
             <Table.Cell>$2999</Table.Cell>
             <Table.Cell>$2999</Table.Cell>
+            <Table.Cell>$2999</Table.Cell>            
             <Table.Cell>
               <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
                 Edit

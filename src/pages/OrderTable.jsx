@@ -3,15 +3,19 @@
 
 import { Table } from "flowbite-react";
 
-const User = () => {
+const OrderTable = () => {
   return (
     <div className="overflow-x-auto">
-      <Table striped>
+      <Table hoverable>
         <Table.Head>
-          <Table.HeadCell>Product name</Table.HeadCell>
-          <Table.HeadCell>Color</Table.HeadCell>
-          <Table.HeadCell>Category</Table.HeadCell>
-          <Table.HeadCell>Price</Table.HeadCell>
+          <Table.HeadCell>Order ID</Table.HeadCell>
+          <Table.HeadCell>Customer Username</Table.HeadCell>
+          <Table.HeadCell>Order Date</Table.HeadCell>
+          <Table.HeadCell>Status</Table.HeadCell>
+          <Table.HeadCell>Quantity</Table.HeadCell>
+          <Table.HeadCell>Payment Status</Table.HeadCell>
+          <Table.HeadCell>Payment Method</Table.HeadCell>
+          <Table.HeadCell>Total Amount</Table.HeadCell>
           <Table.HeadCell>
             <span className="sr-only">Edit</span>
           </Table.HeadCell>
@@ -54,34 +58,10 @@ const User = () => {
               </a>
             </Table.Cell>
           </Table.Row>
-          <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-              Google Pixel Phone
-            </Table.Cell>
-            <Table.Cell>Gray</Table.Cell>
-            <Table.Cell>Phone</Table.Cell>
-            <Table.Cell>$799</Table.Cell>
-            <Table.Cell>
-              <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
-                Edit
-              </a>
-            </Table.Cell>
-          </Table.Row>
-          <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">Apple Watch 5</Table.Cell>
-            <Table.Cell>Red</Table.Cell>
-            <Table.Cell>Wearables</Table.Cell>
-            <Table.Cell>$999</Table.Cell>
-            <Table.Cell>
-              <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
-                Edit
-              </a>
-            </Table.Cell>
-          </Table.Row>
         </Table.Body>
       </Table>
     </div>
   );
 }
 
-export default User
+export default OrderTable
