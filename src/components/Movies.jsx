@@ -5,6 +5,7 @@ import { Card } from "flowbite-react";
 import image from '../assets/onepiece.avif'
 import { movies } from "./data";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -34,7 +35,9 @@ const Movies = () => {
       
       <h1 className="text-3xl text-white font-medium ml-4 mb-4">Moves</h1>
       <div className="flex ">
+        
       {movies.slice(0, 4).map((movie, index)   => (
+        <Link to={`/details/${movie._id}`} key={index}>
           <Card
             key={index}
             className="max-w-sm flex justify-between mx-8 bg-gray-900"
@@ -63,6 +66,7 @@ const Movies = () => {
             </div>
             
           </Card>
+          </Link>
         ))}
       </div>
     </div>

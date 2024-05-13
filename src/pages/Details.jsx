@@ -1,14 +1,42 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import dune from '../assets/dune.jpg'
+import { useParams } from 'react-router-dom';
 
 const Details = () => {
+    const { id } = useParams();
+    console.log('ID:', id);
+    const [movie, setMovie] = useState([]);
+
+   
+    useEffect(() => {
+      const fetchMovie = async () => {
+        try {
+          const response = await fetch(`http://127.0.0.1:5002/api/getMovie/${id}`);
+          if (!response.ok) {
+            throw new Error('Movie not found');
+          }
+          const data = await response.json();
+          setMovie(data);
+
+        } catch (error) {
+          console.error('Error fetching movie:', error);
+
+        }
+      };
+  
+      fetchMovie();
+    }, [id]);
+    
+
+
   return (
     <div>
       <div className='relative'>
         <div className=' w-screen  flex justify-between absolute mt-80'>
         <div className=' ml-8 z-50 '>
-        <h1 className=' text-6xl text-white mb-4  font-bold'>Dune: Part Two </h1>
-        <p className='text-white w-[70%]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut nobis, illo neque sint repellat aperiam modi facilis hic corporis, minus voluptatibus rem earum ullam voluptate sit. Incidunt, molestiae. Nemo dicta quam perspiciatis voluptas quod eaque, iure laborum accusantium unde excepturi vero, consequatur architecto voluptate temporibus alias magnam nobis esse nostrum.</p>
+        <h1 className=' text-6xl text-white mb-4  font-bold'>{movie.title}</h1>
+        <p className='text-white w-[50%]'>{movie.description}</p>
         
 
 <div class="flex items-center mt-4">
@@ -30,7 +58,8 @@ const Details = () => {
     </svg>
     
     <span className="text-white bg-yellow-400 w-12 h-6 rounded-sm text-center  ml-2 ">
-                9.99    
+                {movie.rating}
+          
               </span> 
 </div>
 
@@ -38,9 +67,9 @@ const Details = () => {
         <button className="bg-blue-600 rounded-lg w-32 h-10 mt-4 text-white">
              Play Now
             </button>        </div>
-        <div className=' mr-16 z-50 '>
-            <p className=' text-white mb-4 mt-20'>Cast: Ewan McGregor · Alexander Rostov ; Daniel Cerqueira · Vasily ; Johnny Harris · Osip Glebnikov ; Leah Harvey · Marina ; John Heffernan · Bishop.</p>
-            <p className='text-white'>Genre: Historical Fiction, Urban Fiction, Political Fiction</p>
+        <div className=' mr-16 ml-32 z-50 '>
+            <p className=' text-white mb-4 mt-20'>Cast: {movie.cast}</p>
+            <p className='text-white'>Genre: {movie.genre}</p>
         </div>
         </div>
        

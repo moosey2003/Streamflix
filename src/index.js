@@ -42,7 +42,7 @@ ReactDOM.render(
         <Route path="tvshow" element={<TvShowsTable />} />
         <Route path="trending" element={<TrendingTable/>} />
         <Route path="movieform" element={<MovieForm/>} />
-        <Route path='details' element={<Details/>} />
+          <Route path="/details/:id" element={<Details/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
