@@ -3,7 +3,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 
 
-const MovieForm = () => {
+const TvshowForm = () => {
 
     const [formData, setFormData] = useState({
         imageUrl: '',
@@ -34,13 +34,12 @@ const MovieForm = () => {
             const response = await axios.post('https://api.cloudinary.com/v1_1/dov1eqbcn/image/upload', formDataToSend);
             if (response.status === 200) {
                 const imageUrl = response.data.secure_url;
-                const updatedFormData = {
+                setFormData({
                     ...formData,
                     imageUrl: imageUrl
-                  };
-          
-                console.log(updatedFormData)
-                const backendResponse = await axios.post('http://127.0.0.1:5002/api/movieUpload', updatedFormData);
+                });
+                console.log(formData)
+                const backendResponse = await axios.post('http://127.0.0.1:5002/api/tvshowUpload', formData);
                 console.log('Backend response:', backendResponse.data);
             }
         } catch (error) {
@@ -51,7 +50,7 @@ const MovieForm = () => {
   return (
     <div>
             <div>
-                <h1 className=' text-3xl font-bold text-center my-8'>Add Movie Data</h1>
+                <h1 className=' text-3xl font-bold text-center my-8'>Add TVshow Data</h1>
             </div>
         <form class="max-w-md mx-auto border border-gray-400 rounded-lg mb-8 p-8" onSubmit={handleSubmit}>
         <div className="mb-5 ">
@@ -90,7 +89,6 @@ const MovieForm = () => {
             <label for="video" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Video URL</label>
             <input type="video" id="video" name='video' onChange={handleChange}  class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
         </div>
-        
        
 
 
@@ -101,4 +99,4 @@ const MovieForm = () => {
   )
 }
 
-export default MovieForm
+export default TvshowForm

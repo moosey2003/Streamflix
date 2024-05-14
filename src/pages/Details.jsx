@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import dune from '../assets/dune.jpg'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const Details = () => {
     const { id } = useParams();
@@ -27,6 +27,30 @@ const Details = () => {
   
       fetchMovie();
     }, [id]);
+
+    const addToFavorites = async (movieId) => {
+      try {
+        const userID = sessionStorage.getItem("userID")
+        console.log(movieId)
+        console.log(userID)
+        const response = await fetch(`http://127.0.0.1:5002/api/addToFavorites/${movieId}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+    
+          body: JSON.stringify({ userID }),
+        });
+        if (response.ok) {
+        
+          console.log("Movie added to favorites!");
+        } else {
+          console.error("Failed to add movie to favorites");
+        }
+      } catch (error) {
+        console.error("Error adding movie to favorites:", error);
+      }
+    };
     
 
 
@@ -64,16 +88,23 @@ const Details = () => {
 </div>
 
        <br />
-        <button className="bg-blue-600 rounded-lg w-32 h-10 mt-4 text-white">
+        <Link to={`/play/${movie.video}`} className="bg-blue-600 rounded-lg w-32 h-10 mt-4 text-white py-3 px-4">
              Play Now
-            </button>        </div>
+            </Link>   
+            <button
+                  className="bg-blue-400 rounded-lg w-32 h-10 z-50 ml-8"
+                  onClick={() => addToFavorites(movie._id)}
+                >
+                  Add to Favorite
+                </button>
+                 </div>
         <div className=' mr-16 ml-32 z-50 '>
             <p className=' text-white mb-4 mt-20'>Cast: {movie.cast}</p>
             <p className='text-white'>Genre: {movie.genre}</p>
         </div>
         </div>
        
-  <img src={dune} alt="dune" className='bg-cover' />
+  <img src={movie.imageUrl} alt="dune" className=' w-screen h-screen bg-cover' />
   <div className='absolute bottom-0 left-0 w-full h-[80%] bg-gradient-to-t from-black to-transparent'></div>
 </div>
 

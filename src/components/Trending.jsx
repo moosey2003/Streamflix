@@ -1,6 +1,7 @@
 import { Card } from "flowbite-react";
 import { useEffect, useState } from "react";
 import image from "../assets/onepiece.avif"
+import { Link } from "react-router-dom";
 
 const Trending = () => {
   const [movies, setMovies] = useState([]);
@@ -29,6 +30,7 @@ const Trending = () => {
       <h1 className="text-3xl text-white font-medium ml-4 mb-4">Trending Now</h1>
       <div className="flex ">
       {movies.slice(0, 4).map((movie, index)   => (
+        <Link to={`/details/${movie._id}`} key={index} className="z-20">
           <Card
             key={index}
             className="max-w-sm flex justify-between mx-8 bg-gray-900"
@@ -48,15 +50,10 @@ const Trending = () => {
               {movie.description}...
             </p>
             
-            <div className="flex justify-end">
-            
-
-            <button className="bg-blue-400 rounded-lg w-32 h-10">
-              Add to Favorite
-            </button>
-            </div>
+          
             
           </Card>
+          </Link>
         ))}
       </div>
     </div>

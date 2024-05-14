@@ -7,6 +7,7 @@ import { movies } from "../components/data";
 import { useEffect, useState } from "react";
 import Navigation from "../components/navigation/Navigation";
 import Footers from "../components/Footer";
+import { Link } from "react-router-dom";
 
 const Movie = () => {
   const [movies, setMovies] = useState([]);
@@ -33,41 +34,34 @@ const Movie = () => {
   return (
 <div className="w-screen  bg-black">
   <Navigation />
-    <div className="flex mt-4 mb-4">
-        {/* <h1>Movies</h1> */}
-        <div className="flex ">
-        {movies.map((movie, index) => (
-          <Card
-            key={index}
-            className="max-w-sm flex justify-between mx-8 bg-gray-900"
-            imgAlt="Meaningful alt text for an image that is not purely decorative"
-            imgSrc={image}
-          >
-            <div className="flex items-center justify-between">
-            <h5 className="text-2xl font-bold tracking-tight text-white">
-              {movie.title}
-            </h5>
-            <span className="text-white bg-yellow-400 w-16 h-6 rounded-sm text-center ">
-              {movie.rating}
-            </span>
-            </div>
-           
-            <p className="font-normal w-64 h-24 text-white overflow-hidden text-ellipsis ">
-              {movie.description}...
-            </p>
-            
-            <div className="flex justify-end">
-            
-
-            <button className="bg-blue-400 rounded-lg w-32 h-10">
-              Add to Favorite
-            </button>
-            </div>
-            
-          </Card>
-        ))}
+  <div className="flex mt-4 mb-4">
+        <div className="flex flex-wrap justify-center">
+          {movies.map((movie, index) => (
+            <Link to={`/movie/${movie._id}`} key={index} className="mx-4 mb-4">
+              <Card className="w-80 bg-gray-900 text-white">
+                <img
+                  src={movie.imageUrl}
+                  alt="Meaningful alt text for an image that is not purely decorative"
+                  className="h-48 w-full object-cover" 
+                />
+                <div className="p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <h5 className="text-xl font-bold tracking-tight">
+                      {movie.title}
+                    </h5>
+                    <span className="bg-yellow-400 text-black text-sm font-semibold rounded-sm px-2 py-1">
+                      {movie.rating}
+                    </span>
+                  </div>
+                  <p className="font-normal h-24 text-ellipsis overflow-hidden">
+                    {movie.description}...
+                  </p>
+                </div>
+              </Card>
+            </Link>
+          ))}
+        </div>
       </div>
-    </div>  
 
     <Footers/>
      </div>   

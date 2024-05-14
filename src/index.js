@@ -21,6 +21,18 @@ import MovieForm from './Model/MovieForm';
 import AllTrending from './pages/AllTrending';
 import AllTv from './components/AllTv';
 import Details from './pages/Details';
+import SignUp from './pages/SignUp'
+import SignIn from './pages/SignIn';
+import FavoriteList from './pages/FavoriteList';
+import TrendingForm from './Model/TrendingForm';
+import TvshowForm from './Model/TvshowForm';
+
+
+import Play from './pages/Play';
+import EditMovie from './Model/EditMovie';
+import EditTvshow from './Model/EditTvshow'
+import EditTrending from './Model/EditTrending'
+import UserTable from './pages/UserTable'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -33,7 +45,7 @@ ReactDOM.render(
         <Route path="user" element={<User />} />
         <Route path="movie" element={<AllMovie />} />
         <Route path="tvshows" element={<AllTv />} />
-        <Route path="trending" element={<AllTrending />} />
+        <Route path="trendings" element={<AllTrending />} />
         <Route path="contact" element={<Contact />} />
         <Route path="subscription" element={<Subscription />} />
         <Route path="aboutus" element={<AboutUs />} />
@@ -42,7 +54,17 @@ ReactDOM.render(
         <Route path="tvshow" element={<TvShowsTable />} />
         <Route path="trending" element={<TrendingTable/>} />
         <Route path="movieform" element={<MovieForm/>} />
+        <Route path="trendingform" element={<TrendingForm/>} />
+        <Route path="tvshowform" element={<TvshowForm/>} />
+        <Route path='sign-up' element={<SignUp/>} />
+        <Route path='sign-in' element={<SignIn/>} />
+        <Route path="/play/:id" element={<Play />} />
+        <Route path="/editMovie/:movieId" element={<EditMovie />} />
+        <Route path="/editTvshow/:movieId" element={<EditTvshow />} />
+        <Route path="/editTrending/:movieId" element={<EditTrending />} />
+        <Route path='userTable' element={<UserTable />} />
           <Route path="/details/:id" element={<Details/>} />
+        <Route path='favoriteList' element={<FavoriteList/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
