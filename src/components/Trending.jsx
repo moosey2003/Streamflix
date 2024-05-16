@@ -28,15 +28,15 @@ const Trending = () => {
   return (
     <div className="w-screen mt-4">
       <h1 className="text-3xl text-white font-medium ml-4 mb-4">Trending Now</h1>
-      <div className="flex ">
+      <div className="flex mx-auto">
       {movies.slice(0, 4).map((movie, index)   => (
-        <Link to={`/details/${movie._id}`} key={index} className="z-20">
-          <Card
-            key={index}
-            className="max-w-sm flex justify-between mx-8 bg-gray-900"
-            imgAlt="Meaningful alt text for an image that is not purely decorative"
-            imgSrc={image}
-          >
+        <Link to={`/trendingDetails/${movie._id}`} key={index} className="z-20">
+         <Card className="w-80 bg-gray-900 text-white mx-8">
+                <img
+                  src={movie.imageUrl}
+                  alt="Meaningful alt text for an image that is not purely decorative"
+                  className="h-48 w-full object-cover" 
+                />
             <div className="flex items-center justify-between">
             <h5 className="text-2xl font-bold tracking-tight text-white">
               {movie.title}

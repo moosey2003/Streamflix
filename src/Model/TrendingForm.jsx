@@ -50,7 +50,7 @@ const TrendingForm = () => {
   return (
     <div>
             <div>
-                <h1 className=' text-3xl font-bold text-center my-8'>Add Movie Data</h1>
+                <h1 className=' text-3xl font-bold text-center my-8'>Add Trending Data</h1>
             </div>
         <form class="max-w-md mx-auto border border-gray-400 rounded-lg mb-8 p-8" onSubmit={handleSubmit}>
         <div className="mb-5 ">

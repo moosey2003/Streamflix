@@ -88,7 +88,7 @@ const TVshowsTable = () => {
                 </Table.Cell>
                 <Table.Cell>{data.rating}</Table.Cell>
                 <Table.Cell>
-                <Link to={`/editMovie/${data._id}`}   className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
+                <Link to={`/editTvshow/${data._id}`}   className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
                     Edit
                   </Link>
                 </Table.Cell>

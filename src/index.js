@@ -33,6 +33,9 @@ import EditMovie from './Model/EditMovie';
 import EditTvshow from './Model/EditTvshow'
 import EditTrending from './Model/EditTrending'
 import UserTable from './pages/UserTable'
+import PaymentMethodSelector from './pages/Payment';
+import TrendingDetails from './pages/TrendingDetails';
+import TvshowDetails from './pages/TvshowDetails';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -58,12 +61,15 @@ ReactDOM.render(
         <Route path="tvshowform" element={<TvshowForm/>} />
         <Route path='sign-up' element={<SignUp/>} />
         <Route path='sign-in' element={<SignIn/>} />
+        <Route path='payment/:id' element={<PaymentMethodSelector/>} />
         <Route path="/play/:id" element={<Play />} />
         <Route path="/editMovie/:movieId" element={<EditMovie />} />
         <Route path="/editTvshow/:movieId" element={<EditTvshow />} />
         <Route path="/editTrending/:movieId" element={<EditTrending />} />
         <Route path='userTable' element={<UserTable />} />
           <Route path="/details/:id" element={<Details/>} />
+          <Route path="/trendingDetails/:id" element={<TrendingDetails/>} />
+          <Route path="/tvshowDetails/:id" element={<TvshowDetails/>} />
         <Route path='favoriteList' element={<FavoriteList/>} />
       </Routes>
     </BrowserRouter>

@@ -35,7 +35,7 @@ const SignUp = () => {
 
       const data = await response.json();
       if (response.ok) {
-        // Store user info in session storage
+  
         sessionStorage.setItem("user", JSON.stringify(data.user));
         alert("Registration successful!");
 

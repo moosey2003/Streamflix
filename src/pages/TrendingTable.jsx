@@ -51,7 +51,7 @@ const TrendingTable = () => {
       <div className="flex-1 overflow-x-auto p-4">
         <h2 className="text-2xl font-bold mb-4">Trending</h2>
         <div className=" mb-4">
-        <a href="/movieform" className=" bg-blue-500 text-white rounded-sm p-2 ">
+        <a href="/trendingform" className=" bg-blue-500 text-white rounded-sm p-2 ">
           Add Trending
         </a>
         </div>
@@ -88,7 +88,7 @@ const TrendingTable = () => {
                 </Table.Cell>
                 <Table.Cell>{data.rating}</Table.Cell>
                 <Table.Cell>
-                <Link to={`/editMovie/${data._id}`}   className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
+                <Link to={`/editTrending/${data._id}`}   className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
                     Edit
                   </Link>
                 </Table.Cell>

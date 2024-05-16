@@ -29,12 +29,12 @@ const AllTrending = () => {
       <h1 className="text-3xl text-white font-medium ml-4 mb-4">Trending Now</h1>
       <div className="flex ">
         {movies.map((movie, index) => (
-          <Card
-            key={index}
-            className="max-w-sm flex justify-between mx-8 bg-gray-900"
-            imgAlt="Meaningful alt text for an image that is not purely decorative"
-            imgSrc={image}
-          >
+          <Card className="w-80 bg-gray-900 text-white">
+          <img
+            src={movie.imageUrl}
+            alt="Meaningful alt text for an image that is not purely decorative"
+            className="h-48 w-full object-cover" 
+          />
             <div className="flex items-center justify-between">
             <h5 className="text-2xl font-bold tracking-tight text-white">
               {movie.title}

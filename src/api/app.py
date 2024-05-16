@@ -3,6 +3,7 @@ from flask_cors import CORS
 from flask_pymongo import PyMongo, ObjectId
 from bson import ObjectId
 from bson.json_util import dumps
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -101,6 +102,28 @@ def get_tvshows():
             'video': movie['video'],
         }  for movie in data]
     return jsonify(movie)
+
+@app.route('/api/getTvshows/<movie_id>', methods=['GET'])
+def find_tvshow(movie_id):
+    movie = mongo.db.tvshows.find_one({'_id': ObjectId(movie_id)})
+    if movie:
+        movie['_id'] = str(movie['_id'])  
+        return jsonify(movie), 200  
+    else:
+        return jsonify({"error": "Movie not found"}), 404
+    
+@app.route('/api/getTrending/<movie_id>', methods=['GET'])
+def find_trending(movie_id):
+    movie = mongo.db.trending.find_one({'_id': ObjectId(movie_id)})
+    if movie:
+        movie['_id'] = str(movie['_id'])  
+        return jsonify(movie), 200  
+    else:
+        return jsonify({"error": "Movie not found"}), 404
+    
+
+
+
 
 @app.route('/api/getMovie/<movie_id>', methods=['GET'])
 def get_movie(movie_id):
@@ -484,6 +507,45 @@ def search_movies():
             results.append(movie)
     return jsonify(results)
 
+@app.route('/api/addPayment', methods=['POST']) 
+def add_payment_method():
+    data = request.get_json()
+    user_id = data.get('userid')
+    payment_method = data.get('payment_method')
+    subscription = data.get('subscription')
+
+    if not user_id:
+        return jsonify({'error': 'User ID not provided'}), 400
+
+
+    user = mongo.db.users.find_one({'email': user_id})
+
+    if not user:
+        return jsonify({'error': 'User not found'}), 404
+
+ 
+    order = {
+        'email': user_id,
+        'payment_method': payment_method,
+        'date': datetime.now(),
+        'subscription': subscription
+    }
+    mongo.db.order.insert_one(order)
+
+    return jsonify("good"), 200
+
+@app.route('/api/orders', methods=['GET'])
+def get_orders():
+    data = mongo.db.order.find()
+    movie = [{
+        '_id': str(movie['_id']), 
+            'email': movie['email'],
+            'payment_method': movie['payment_method'],
+            'date': movie['date'],
+            'subscription': movie['subscription'],
+           
+        }  for movie in data]
+    return jsonify(movie)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5002)

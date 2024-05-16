@@ -7,12 +7,12 @@ const Movies = () => {
          <div className="flex ">
         {/* <h1>Movies</h1> */}
         {movies.map((data, index) => (
-             <Card
-             key={index}
-             className="max-w-sm flex justify-between"
-             imgAlt="Meaningful alt text for an image that is not purely decorative"
-             imgSrc={image}
-           >
+             <Card className="w-80 bg-gray-900 text-white">
+             <img
+               src={data.imageUrl}
+               alt="Meaningful alt text for an image that is not purely decorative"
+               className="h-48 w-full object-cover" 
+             />
              <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                {data.name}
              </h5>

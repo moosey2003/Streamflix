@@ -38,7 +38,7 @@ const Movie = () => {
         <div className="flex flex-wrap justify-center">
           {movies.map((movie, index) => (
             <Link to={`/movie/${movie._id}`} key={index} className="mx-4 mb-4">
-              <Card className="w-80 bg-gray-900 text-white">
+              <Card className="w-80 bg-gray-900 text-white h-96">
                 <img
                   src={movie.imageUrl}
                   alt="Meaningful alt text for an image that is not purely decorative"
