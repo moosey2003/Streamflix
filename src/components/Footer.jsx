@@ -6,7 +6,7 @@ import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-
 
 const  Footers = () => {
   return (
-    <Footer bgDark className=" rounded-none">
+    <Footer bgDark className=" rounded-none bg-black">
       <div className="w-full">
         <div className="grid w-full grid-cols-2 gap-8 px-6 py-8 md:grid-cols-4">
           <div>
@@ -45,8 +45,8 @@ const  Footers = () => {
             </Footer.LinkGroup>
           </div>
         </div>
-        <div className="w-full bg-gray-700 px-4 py-6 sm:flex sm:items-center sm:justify-between">
-          <Footer.Copyright href="#" by="Flowbite™" year={2022} />
+        <div className="w-full bg-black px-4 py-6 sm:flex sm:items-center sm:justify-between">
+          <Footer.Copyright href="#" by="Streamflix™" year={2024} />
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
             <Footer.Icon href="#" icon={BsFacebook} className="hover:text-white" />
             <Footer.Icon href="#" icon={BsInstagram} className="hover:text-white" />

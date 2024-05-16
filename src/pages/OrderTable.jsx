@@ -35,12 +35,7 @@ const OrderTable = () => {
     <div className="flex h-screen">
       <Sidebar />
       <div className="flex-1 overflow-x-auto p-4">
-        <h2 className="text-2xl font-bold mb-4">Movies</h2>
-        <div className=" mb-4">
-        <a href="/movieform" className=" bg-blue-500 text-white rounded-sm p-2 ">
-          Add Movie
-        </a>
-        </div>
+        
       
         <Table>
           <Table.Head>

@@ -40,16 +40,16 @@ const FavoriteList = () => {
     <div className="w-screen bg-black">
       <Navigation />
       <div className="flex mt-4 mb-4">
-        <div className="flex ">
+        <div className=" flex flex-wrap ">
           {movies.map((movie, index) => (
             
 
-            <Card
-              key={index}
-              className="max-w-sm flex justify-between mx-8 bg-gray-900"
-              imgAlt="Meaningful alt text for an image that is not purely decorative"
-              imgSrc={image}
-            >
+            <Card className="w-96 bg-gray-900 text-white mx-8 my-8 ml-16">
+                  <img
+                    src={movie.imageUrl}
+                    alt="Meaningful alt text for an image that is not purely decorative"
+                    className="h-48 w-full object-cover" 
+                  />
               <div className="flex items-center justify-between">
                 <h5 className="text-2xl font-bold tracking-tight text-white">
                   {movie.title}
@@ -59,7 +59,7 @@ const FavoriteList = () => {
                 </span>
               </div>
              
-              <p className="font-normal w-64 h-24 text-white overflow-hidden text-ellipsis ">
+              <p className="font-normal w-72 h-24 text-white overflow-hidden  text-ellipsis ">
                 {movie.description}...
               </p>
             </Card>

@@ -27,7 +27,7 @@ const AllTrending = () => {
   return (
     <div className="w-screen mt-4">
       <h1 className="text-3xl text-white font-medium ml-4 mb-4">Trending Now</h1>
-      <div className="flex ">
+      <div className="flex flex-wrap justify-center ">
         {movies.map((movie, index) => (
           <Card className="w-80 bg-gray-900 text-white">
           <img

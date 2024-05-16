@@ -35,9 +35,9 @@ const Movie = () => {
 <div className="w-screen  bg-black">
   <Navigation />
   <div className="flex mt-4 mb-4">
-        <div className="flex flex-wrap justify-center">
+        <div className="flex flex-wrap justify-center ">
           {movies.map((movie, index) => (
-            <Link to={`/movie/${movie._id}`} key={index} className="mx-4 mb-4">
+            <Link to={`/details/${movie._id}`} key={index} className="mx-4 mb-4">
               <Card className="w-80 bg-gray-900 text-white h-96">
                 <img
                   src={movie.imageUrl}

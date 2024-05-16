@@ -52,7 +52,7 @@ const SignIn = () => {
           <TextInput
             id="email"
             type="email"
-            placeholder="name@flowbite.com"
+            placeholder="enter your email"
             required
             shadow
             value={email}

@@ -67,9 +67,9 @@ ReactDOM.render(
         <Route path="/editTvshow/:movieId" element={<EditTvshow />} />
         <Route path="/editTrending/:movieId" element={<EditTrending />} />
         <Route path='userTable' element={<UserTable />} />
-          <Route path="/details/:id" element={<Details/>} />
-          <Route path="/trendingDetails/:id" element={<TrendingDetails/>} />
-          <Route path="/tvshowDetails/:id" element={<TvshowDetails/>} />
+        <Route path="/details/:id" element={<Details/>} />
+        <Route path="/trendingDetails/:id" element={<TrendingDetails/>} />
+        <Route path="/tvshowDetails/:id" element={<TvshowDetails/>} />
         <Route path='favoriteList' element={<FavoriteList/>} />
       </Routes>
     </BrowserRouter>

@@ -453,10 +453,16 @@ def get_favorite_movies(user_id):
 
         movies_details = []
         for movie_id in movie_ids:
-            movie_details = mongo.db.movies.find_one({"_id": ObjectId(movie_id)})
+            movie_id_obj = ObjectId(movie_id)
+            movie_details = mongo.db.movies.find_one({"_id": movie_id_obj})
+            if not movie_details:
+                movie_details = mongo.db.trending.find_one({"_id": movie_id_obj})
+            if not movie_details:
+                movie_details = mongo.db.tvshows.find_one({"_id": movie_id_obj})
+
             if movie_details:
                 movies_details.append(movie_details)
-        
+
         return dumps(movies_details), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500

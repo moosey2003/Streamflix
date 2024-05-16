@@ -37,8 +37,8 @@ const AboutUs = () => {
     <div style={gradientStyle}>
 
       <div style={containerStyle}>
-        <h1 style={headingStyle}>Welcome to Streamflix</h1>
-        <p style={paragraphStyle}>Streamflix is not just a movie streaming platform; it's a gateway to a world of limitless entertainment. Founded in [year], our platform has revolutionized the way people consume movies and TV shows.</p>
+        <h1 style={headingStyle}><b>Welcome to Streamflix!!</b></h1>
+        <p style={paragraphStyle}>Streamflix is not just a movie streaming platform; it's a gateway to a world of limitless entertainment. Founded in 2024, our platform has revolutionized the way people consume movies and TV shows.</p>
         <p style={paragraphStyle}>At Streamflix, we are committed to providing our subscribers with an unparalleled viewing experience. With a vast library of movies, TV series, documentaries, and original content, there's always something new to discover.</p>
         <p style={paragraphStyle}>Our team of dedicated curators ensures that only the best content makes it to your screens. Whether you're in the mood for a classic film, a gripping TV series, or an award-winning documentary, Streamflix has you covered.</p>
         <p style={paragraphStyle}>Join us on this cinematic journey and immerse yourself in a world of entertainment like never before. Get ready to stream, relax, and enjoy the show with Streamflix!</p>

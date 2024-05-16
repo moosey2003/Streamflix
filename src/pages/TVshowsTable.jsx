@@ -78,7 +78,7 @@ const TVshowsTable = () => {
                 <Table.Cell className="overflow-hidden text-ellipsis whitespace-nowrap max-w-xs">
                   <div className="truncate">{data.genre}</div>
                 </Table.Cell>
-                <Table.Cell>{data.release_date}</Table.Cell>
+                <Table.Cell>{data.releaseDate}</Table.Cell>
                 <Table.Cell>{data.duration}</Table.Cell>
                 <Table.Cell className="overflow-hidden text-ellipsis whitespace-nowrap max-w-xs">
                   <div className="truncate">{data.cast}</div>

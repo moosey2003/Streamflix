@@ -48,7 +48,7 @@ const Sidebar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/orderTable" className="text-lg hover:bg-gray-400 p-2 rounded-md block text-center">
+              <Link to="/order" className="text-lg hover:bg-gray-400 p-2 rounded-md block text-center">
                 Orders
               </Link>
             </li>
